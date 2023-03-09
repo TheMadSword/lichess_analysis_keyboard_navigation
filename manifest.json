@@ -1,0 +1,16 @@
+{
+  "manifest_version": 3,
+  "version": "1.0.0",
+
+  "name": "Lichess analysis key bindings",
+  "description": "Creates additionnal keyboard shortcuts to simulate inaccurracies/mistakes/blunders/request-analysis/learn-from-mistakes/next clicks.",
+  "permissions": [],
+  "content_scripts": [
+    {
+      "matches": [
+        "https://lichess.org/*"
+      ],
+      "js": ["content.js"]
+    }
+  ]
+}
