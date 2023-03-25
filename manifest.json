@@ -1,9 +1,9 @@
 {
   "manifest_version": 3,
-  "version": "1.0.0",
+  "version": "1.1.0",
 
   "name": "Lichess analysis key bindings",
-  "description": "Creates additionnal keyboard shortcuts to simulate inaccurracies/mistakes/blunders/request-analysis/learn-from-mistakes/next clicks.",
+  "description": "Creates additionnal keyboard shortcuts for analysis.",
   "permissions": [],
   "content_scripts": [
     {

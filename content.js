@@ -9,30 +9,28 @@
 const BLUNDER_KEY = "KeyB";
 const MISTAKE_KEY = "KeyM";
 const INACCURACY_KEY = "KeyI";
-const NEXT_KEY = "Enter";
-const ANALYSIS_LEARN_KEY = "KeyR";
 
 if (!window.location.toString().includes("lichess.org/")) {
   console.log("Not Lichess ?");
   return;
 }
 
-function getCorrectUserLinkId(isAlternate) {
+function getCorrectUserLinkId() {
   let possibilities = document.querySelectorAll(".advice-summary__side a.user-link");
   let user = null;
 
   let classes = document.querySelector(".main-board .manipulable").classList;
   if (classes.contains("orientation-white")) {
-    user = possibilities[Number(isAlternate)];
+    user = possibilities[1];
   } else if (classes.contains("orientation-black")) {
-    user = possibilities[Number(!isAlternate)];
+    user = possibilities[0];
   }
 
   return user;
 }
 
-function click_badmoveinfo(badmoveclass, isAlternate) {
-  let userLinkId = getCorrectUserLinkId(isAlternate);
+function click_badmoveinfo(badmoveclass) {
+  let userLinkId = getCorrectUserLinkId();
   if (userLinkId !== null) {
     let selector = ".advice-summary__error." + badmoveclass;
     userLinkId.parentElement.parentElement
@@ -70,16 +68,16 @@ document.addEventListener('keyup', function(e) {
     return;
   }
 
+  if (!e.shiftKey) {
+    return;
+  }
+
   if (e.code === BLUNDER_KEY) {
-    click_badmoveinfo("blunder", e.shiftKey || e.altKey);
+    click_badmoveinfo("blunder");
   } else if (e.code === MISTAKE_KEY) {
-    click_badmoveinfo("mistake", e.shiftKey || e.altKey);
+    click_badmoveinfo("mistake");
   } else if (e.code === INACCURACY_KEY) {
-    click_badmoveinfo("inaccuracy", e.shiftKey || e.altKey);
-  } else if (e.code === NEXT_KEY) {
-    click_next();
-  } else if (e.code === ANALYSIS_LEARN_KEY) {
-    click_analysis_learn();
+    click_badmoveinfo("inaccuracy");
   }
 });
 
