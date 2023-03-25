@@ -7,3 +7,5 @@ New shortcuts :
 For b/m/i, shift can be used to do the same for the top player
 - r for 'Request computer analysis' and 'Learn from your mistakes'
 - Enter to click 'Next' in 'Learn from your mistakes'
+
+See https://chrome.google.com/webstore/detail/lichess-analysis-key-bind/ncbpdbhedicloffljpcidhomgaaoplnj?hl=en-GB
