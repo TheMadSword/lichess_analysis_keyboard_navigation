@@ -47,7 +47,7 @@ function click_analysis_learn() {
 }
 
 function is_analysis() {
-  let analysis_box = document.querySelector("#main-wrap .analyse__round-training");
+  let analysis_box = document.querySelector("#main-wrap .analyse__underboard");
   return analysis_box !== null && analysis_box.textContent !== '';
 }
 
